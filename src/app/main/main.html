@@ -1,0 +1,33 @@
+<div layout="vertical" layout-fill>
+
+  <md-content>
+    <header>
+      <acme-navbar creationDate="main.creationDate" />
+    </header>
+
+    <div class="techs" layout-align="center">
+      <md-card ng-repeat="pokemon in main.pokemons">
+        <div class="thumbnail">
+          <img class="pull-right" ng-src="http://pokeapi.co/{{ pokemon.image }}" alt="{{ pokemon.name }}">
+          <div class="caption">
+            <h3>{{ pokemon.name }}</h3>
+            <div>Defense: {{ pokemon.defense }}</div>
+            <div>Attack: {{ pokemon.attack }}</div>
+            <ul ng-repeat="ability in pokemon.abilities">
+              <li>{{ ability.name }}</li>
+            </ul>
+            <p>{{ pokemon.description }}</p>
+            <p><a ng-href="{{ pokemon.url }}">{{ pokemon.url }}</a></p>
+          </div>
+        </div>
+      </md-card>
+
+      <div infinite-scroll="main.loadMore()" infinite-scroll-distance="3"></div>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular ng-if="main.isLoading" md-mode="indeterminate" layout-align="center"></md-progress-circular>
+    </div>
+  </md-content>
+
+</div>
