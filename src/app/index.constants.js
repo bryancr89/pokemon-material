@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('twitterApp')
+    .module('pokemonApp')
     .constant('malarkey', malarkey)
     .constant('toastr', toastr)
     .constant('moment', moment);

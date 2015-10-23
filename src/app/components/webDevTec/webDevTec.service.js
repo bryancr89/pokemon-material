@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-      .module('twitterApp')
+      .module('pokemonApp')
       .service('webDevTec', webDevTec);
 
   /** @ngInject */
